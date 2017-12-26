@@ -11,7 +11,7 @@ notifications:
 
 env:
   global:
-  - TRAVIS_GH3="True"
+  - GH3_RECORD_MODE='never'
 
 matrix:
   include:

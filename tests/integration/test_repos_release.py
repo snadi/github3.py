@@ -2,11 +2,14 @@ import github3
 import os
 import tempfile
 
+import pytest
+
 from .helper import IntegrationHelper
 
 
 class TestRelease(IntegrationHelper):
 
+    @pytest.mark.xfail('os.environ["APPVEYOR"] == "True"')
     def test_archive(self):
         """Test the ability to download a release archive."""
         cassette_name = self.cassette_name('archive')
